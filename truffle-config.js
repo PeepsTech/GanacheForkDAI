@@ -23,6 +23,9 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+  require('dotenv').config() 
+  const mnenomic = "myth like..."; //autogen seed phrase
 
 module.exports = {
   plugins: [],
@@ -37,6 +40,7 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
+  
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
@@ -46,8 +50,9 @@ module.exports = {
     //
     development: {
       host: '127.0.0.1', // Localhost (default: none)
-      port: 8546, // Standard Ethereum port (default: none)
-      network_id: '*' // Any network (default: none)
+      port: 8545, // Standard Ethereum port (default: none)
+      network_id: '999', // Any network (default: none)
+      provider: () => new HDWalletProvider(mnenomic, "http://localhost:8545"),
     }
 
     // Another network with more advanced options...

@@ -22,5 +22,8 @@
     "chai": "^4.2.0",
     "openzeppelin-test-helpers": "^0.4.3",
     "truffle": "^5.0.35"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.0.42"
   }
 }
